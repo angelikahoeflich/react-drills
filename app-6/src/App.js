@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Todo from './Todo';
+
 
 class App extends Component() {
   constructor(){
@@ -11,26 +12,25 @@ class App extends Component() {
       input: ''
     };
 
-
+      this.addTask = this.addTask.bind(this);
   }
   
   render(){
-
     let list = this.state.list.map(el => {
-      return <Todo/>
-    })
-
-
+      return <Todo key={index}tas={element}/>
+    });
 
   return (
     <div className="App">
-      <h1>My To Do List</h1>
+      <h1>My To Do List!</h1>
       <div>
-    <input placeholder="type new task" type="text"/>
+    <input
+    value={this.state.input} placeholder="type new task"
+    onChange={e => this.addTask(e.target.value)}/>
 
-    <button onClick={}>Add stuff here</button>
+    <button onClick={this.addTask}>Add stuff here</button>
 
-
+    {list}
       </div>
     </div>
   );
