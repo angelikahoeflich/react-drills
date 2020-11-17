@@ -1,12 +1,27 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
+import Todo from './Todo';
+import List from './List';
+import NewTask from './NewTask';
 
-function App() {
-  return (
-    <div className="App">
-      
-    </div>
-  );
+class App extends Component{
+  constructor(){
+    super()
+
+    this.state={}
+  }
+
+
+  render(){
+    return(
+
+        <div>
+
+        </div>
+    )
+  }
 }
 
-export default App;
+export default App
+
+
