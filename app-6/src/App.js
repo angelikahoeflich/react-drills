@@ -5,14 +5,15 @@ import Todo from './Todo';
 
 class App extends Component() {
   constructor(){
-    super()
+    super();
 
     this.state = {
       list: [],
       input: ''
     };
 
-      this.addTask = this.addTask.bind(this);
+      this.handleAddTask = this.handleAddTask.bind(this);
+      this.handleInputChange = this.handleInputChange.bind(this)
   }
 
   handleInputChange(value){
