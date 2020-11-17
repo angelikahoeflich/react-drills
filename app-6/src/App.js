@@ -14,10 +14,23 @@ class App extends Component() {
 
       this.addTask = this.addTask.bind(this);
   }
+
+  handleInputChange(value){
+    this.setState({
+      input: value
+    })
+  }
+
+  handleAddTask(){
+    this.setState({
+      list: [...this.state.list, this.state.input],
+      input: ''
+    })
+  }
   
   render(){
     let list = this.state.list.map(el => {
-      return <Todo key={index}tas={element}/>
+      return <Todo key={index} task={el}/>
     });
 
   return (
@@ -25,13 +38,15 @@ class App extends Component() {
       <h1>My To Do List!</h1>
       <div>
     <input
-    value={this.state.input} placeholder="type new task"
-    onChange={e => this.addTask(e.target.value)}/>
+      value={this.state.input} 
+      placeholder="type new task"
+      onChange={e => this.addTask(e.target.value)}/>
 
-    <button onClick={this.addTask}>Add stuff here</button>
+    <button onClick={this.handleAddTask}>Add stuff here</button>
 
-    {list}
+    
       </div>
+      {list}
     </div>
   );
 }
