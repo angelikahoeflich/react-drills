@@ -26,7 +26,7 @@ class App extends Component{
         <div>
             <h1>My to-do list:</h1>
             <NewTask add={this.handleAdd}/>
-            <List lists={this.state.list}/>
+            <List tasks={this.state.list}/>
         </div>
     )
   }
